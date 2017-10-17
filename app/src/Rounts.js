@@ -5,10 +5,33 @@ import PatientManageScreen from './views/TabPatientManage.template';
 import PersonalScreen from './views/TabPersonal.template';
 // import IconFont from './sources/IconFont'
 
-import React from 'react'
+const NotifcationNav = StackNavigator({
+	Home: {
+		screen: NotificationScreen,
+		navigationOptions: ({navigation}) => ({
+			headerTitle: '医医',
+		}),
+	}
+});
+const PatientManageNav = StackNavigator({
+	Home: {
+		screen: PatientManageScreen,
+		navigationOptions: ({navigation}) => ({
+			headerTitle: '🌺🌺',
+		}),
+	}
+});
+const PersonalNav = StackNavigator({
+	Home: {
+		screen: PersonalScreen,
+		navigationOptions: ({navigation}) => ({
+			title: '我的',
+		}),
+	}
+});
 const MyApp = TabNavigator({
 	Notification: {
-		screen: NotificationScreen,
+		screen: NotifcationNav,
 		navigationOptions: ({navigation}) => ({
 			tabBarLabel: '医医',
 			title: '医医',
@@ -17,7 +40,7 @@ const MyApp = TabNavigator({
 		}),
 	},
 	PatientManage: {
-		screen: PatientManageScreen,
+		screen: PatientManageNav,
 		navigationOptions: ({navigation}) => ({
 			tabBarLabel: '患者管理',
 			// tabBarIcon: (
@@ -25,7 +48,7 @@ const MyApp = TabNavigator({
 		}),
 	},
 	Personal: {
-		screen: PersonalScreen,
+		screen: PersonalNav,
 		navigationOptions: ({navigation}) => ({
 			tabBarLabel: '工作站',
 			title: '工作站',
