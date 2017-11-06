@@ -1,4 +1,4 @@
-
+// 通知 api
 export const IMData = [
 	{
 		"taskId": "22usqdf83lpr107peqr315lj1uTASK",
@@ -1379,7 +1379,7 @@ export const IMData = [
 		}
 	}
 ]*/
-
+// 已处理 api
 export const HandledData = [
 	{
 		"taskId": "22r4q7qr8socrcnhvmb82skg53TASK",
@@ -2248,5 +2248,187 @@ export const HandledData = [
 			],
 			"bookTime": 1503458590621
 		}
+	}
+]
+
+// 用户基本信息 api
+export const UserExmaple = {
+	"name": "张嘉佳",
+	"avatar": {
+		"uri": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170822/image/a4a/a4accbc5835ac24b5cd5c4e017ea45b0.22bpfuhps3lnrfgj79es2cptpsOSS.jpeg?Expires=1824435532&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=KHIYhNFdGDQPY0M9hk9MymYyZpg%3D&x-oss-process=style%2Fstyle_size_128"
+	},
+	"phone": "14440000000",
+	"gender": "女",
+	"identity_code": "110101198108071569",
+	"birthday": "1981-08-07",
+	"department": "脑科",
+	"pid": "123",
+	"case_no": "45666",
+	"hos_no": "123456",
+	"admission_time": "2017-09-19",
+	"leave_time": "2017-09-19",
+	"resp_doctor": [
+		{
+			"userId": "21uhu15oel0qtcdu0qa1st9dmqD",
+			"groupId": ""
+		},
+		{
+			"userId": "22bpdhudkpug4ft0iciaiqp6g3D",
+			"groupId": ""
+		},
+		{
+			"userId": "22bpg267n5npc4sa54d5pg3cocD",
+			"groupId": ""
+		},
+		{
+			"userId": "22bpjdju52aimdv3it9h65m8v6D",
+			"groupId": ""
+		},
+		{
+			"userId": "",
+			"groupId": "22g2430sp95e50vnq6gap979brDGRP"
+		}
+	],
+	"family_mobile": "14412345676",
+	"category": "BBC JC",
+	"remark": "患者病毒",
+	"isVip": true,
+	"vipExpireTime": "174天",
+	"devicesInfos": "手表"
+}
+
+// 用户诊疗记录 api
+export const UserCaseList = [
+	{
+		"caseId": "22s8qu2habalv9uk97f93h6fp6TREATMENT",
+		"caseTime": 1507716583000,
+		"caseDesc": "测试",
+		"caseAttache": [
+			{
+				"objectId": "/20171011/image/853/853a828f029910d49851468cbb6a3360.22s8qu38e64dpfnp6q1t436mceOSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20171011/image/853/853a828f029910d49851468cbb6a3360.22s8qu38e64dpfnp6q1t436mceOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=p3zWDFdtmGuIHe1MzXh1IDVLrV4%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20171011/image/853/853a828f029910d49851468cbb6a3360.22s8qu38e64dpfnp6q1t436mceOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=d91XC4a4a1wJe9u60%2FPaaEfu8Sc%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22g23581oou8ifkhg636c7kq35TREATMENT",
+		"caseTime": 1504515617000,
+		"caseDesc": "哈哈",
+		"caseAttache": [
+			{
+				"objectId": "/20170904/image/f31/f316c87b0b567f473c0611fe8237db5f.22g2358lh7nhp3hhh3ogug6oc2OSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170904/image/f31/f316c87b0b567f473c0611fe8237db5f.22g2358lh7nhp3hhh3ogug6oc2OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=vN40xsi111OMR0uXvs%2BW4khBL5I%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170904/image/f31/f316c87b0b567f473c0611fe8237db5f.22g2358lh7nhp3hhh3ogug6oc2OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=f%2FuCPFf%2BAtjKkaHIbppqWwqnV2k%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22fjlh47ph4q09a8982d9eoiecTREATMENT",
+		"caseTime": 1504368000000,
+		"caseDesc": "哈哈",
+		"caseAttache": [
+			{
+				"objectId": "/20170903/image/1ee/1eea3ad3b58ce72ff3450674170877bc.22fjlh7h6u2v520o4lrrd4b1g2OSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170903/image/1ee/1eea3ad3b58ce72ff3450674170877bc.22fjlh7h6u2v520o4lrrd4b1g2OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=zKjCXTQjqQKRHDRyaI%2F6LqEknes%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170903/image/1ee/1eea3ad3b58ce72ff3450674170877bc.22fjlh7h6u2v520o4lrrd4b1g2OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=d3abqGJux%2By%2BGFdcsdtEfVbo3v8%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22ff7hedlopi34nsc8kt0c64opTREATMENT",
+		"caseTime": 1504281600000,
+		"caseDesc": "哈哈哈",
+		"caseAttache": [
+			{
+				"objectId": "/20170902/image/236/236ea0020e0cabad46e773805fb69285.22ff7h4trrfau97v1rlp904p9iOSS.png",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170902/image/236/236ea0020e0cabad46e773805fb69285.22ff7h4trrfau97v1rlp904p9iOSS.png?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=S30JBloEKW%2BUsUnoT23sldm21M0%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170902/image/236/236ea0020e0cabad46e773805fb69285.22ff7h4trrfau97v1rlp904p9iOSS.png?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=nhpaJx7HBva%2BI7BPn4U4XFMhO14%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22dus8aptlfmucgskofiuqvrp8TREATMENT",
+		"caseTime": 1503936000000,
+		"caseDesc": "测试",
+		"caseAttache": [
+			{
+				"objectId": "/20170829/image/478/47819351d32965a14ad7bdda38047229.22dus7nhb4mjgfncnrp5jab48eOSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170829/image/478/47819351d32965a14ad7bdda38047229.22dus7nhb4mjgfncnrp5jab48eOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=SAILyuLDQRlSXI3qmrt1p3fCYvs%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170829/image/478/47819351d32965a14ad7bdda38047229.22dus7nhb4mjgfncnrp5jab48eOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=4GoDltKLY0gurbpMvu2V%2FqrcNuM%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22cvbcg79nhb93nncevis6hov7TREATMENT",
+		"caseTime": 1503676800000,
+		"caseDesc": "测试",
+		"caseAttache": [
+			{
+				"objectId": "/20170826/image/276/2763e9efe037f6aa1461b0c9cc0a50d4.22cvbcfmqsgh378vudi8jp6n96OSS.png",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170826/image/276/2763e9efe037f6aa1461b0c9cc0a50d4.22cvbcfmqsgh378vudi8jp6n96OSS.png?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=1rwM%2FUJmSneuU1AdFfj8z%2Fi4yhM%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170826/image/276/2763e9efe037f6aa1461b0c9cc0a50d4.22cvbcfmqsgh378vudi8jp6n96OSS.png?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=pnfnY0z%2FbcJcryH0aNJC7qezCi0%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22conchuigpblb3bq4nnsks063TREATMENT",
+		"caseTime": 1503652425000,
+		"caseDesc": "测起",
+		"caseAttache": [
+			{
+				"objectId": "/20170825/image/d39/d3901b6961a0a9454cf66390184f5ade.22concirfrjs7ea8orfs41c6u8OSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170825/image/d39/d3901b6961a0a9454cf66390184f5ade.22concirfrjs7ea8orfs41c6u8OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=fkN7y6%2BQPnpfRhUaxm1fHCvukys%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170825/image/d39/d3901b6961a0a9454cf66390184f5ade.22concirfrjs7ea8orfs41c6u8OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=tReAw6brNIqhxrXdKcli17i7X68%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22cd4s6pgptirc6ss5a3p7r14dTREATMENT",
+		"caseTime": 1503504000000,
+		"caseDesc": "吧基督教",
+		"caseAttache": [
+			{
+				"objectId": "/20170824/image/ca7/ca73266b7fe31995cf5a100b9c7a42b7.22cd4rju6m1hlebtlrbi9570j2OSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170824/image/ca7/ca73266b7fe31995cf5a100b9c7a42b7.22cd4rju6m1hlebtlrbi9570j2OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=atwD2rTGlmYm6YsBsAgMLhf5hps%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170824/image/ca7/ca73266b7fe31995cf5a100b9c7a42b7.22cd4rju6m1hlebtlrbi9570j2OSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=Ft%2FvNj6t8K%2FNNClH1AhVisybX9s%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22cd4ucvanc8a0idkdcptti7hoTREATMENT",
+		"caseTime": 1503504000000,
+		"caseDesc": "好的鸡蛋卷",
+		"caseAttache": [
+			{
+				"objectId": "/20170824/image/cb4/cb4eb5adfb47e66a6e9395afa95939df.22cd4u4jgi8u175k0b0q8brqtrOSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170824/image/cb4/cb4eb5adfb47e66a6e9395afa95939df.22cd4u4jgi8u175k0b0q8brqtrOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=IhTosey%2Fl6HCFPhewVMUE3530Oc%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170824/image/cb4/cb4eb5adfb47e66a6e9395afa95939df.22cd4u4jgi8u175k0b0q8brqtrOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=%2BJEkDXUhajHmRhSHBiznMfaXwVg%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22c0j9kvfqvoacpphtpn0hp9i0TREATMENT",
+		"caseTime": 1503417600000,
+		"caseDesc": "阿配合",
+		"caseAttache": [
+			{
+				"objectId": "/20170823/image/716/7161ade35cec279f87fefbde07768cc3.22c0j9em1p6ic0pruh5fhmi3apOSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170823/image/716/7161ade35cec279f87fefbde07768cc3.22c0j9em1p6ic0pruh5fhmi3apOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=QxOVzuVqW3Bnx22egzQvJTPvBPQ%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170823/image/716/7161ade35cec279f87fefbde07768cc3.22c0j9em1p6ic0pruh5fhmi3apOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=sXSb2nHtPhWC1Jc2GPkSNoS8djo%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
+	},
+	{
+		"caseId": "22g8lu8sou6tc0n5oobieiiqr3TREATMENT",
+		"caseTime": 1491350385000,
+		"caseDesc": "非公有",
+		"caseAttache": [
+			{
+				"objectId": "/20170905/image/8ae/8aed2326b84f64bf0631b4aff7e8c71d.22g8luai84msa9sq3p1k9j6gkjOSS.jpeg",
+				"src": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170905/image/8ae/8aed2326b84f64bf0631b4aff7e8c71d.22g8luai84msa9sq3p1k9j6gkjOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=ir5cB52fVJb9WE6Y3Ffq63aHDNg%3D&x-oss-process=style%2Fstyle_size_1280_max",
+				"thumb": "https://ifollow.oss-cn-beijing.aliyuncs.com/20170905/image/8ae/8aed2326b84f64bf0631b4aff7e8c71d.22g8luai84msa9sq3p1k9j6gkjOSS.jpeg?Expires=1824690953&OSSAccessKeyId=LTAIZAkrNdf4JSqC&Signature=jowSUGQccdvIk1JpfIfqaWnMij4%3D&x-oss-process=style%2Fstyle_size_128"
+			}
+		]
 	}
 ]
