@@ -72,7 +72,10 @@ export const glyphMap = {
     icon_camera_add: 0xe627,
     icon_recorder: 0xe628,
     icon_sport_punchout: 0xe629,
-    icon_watch: 0xe62a
+    icon_watch: 0xe62a,
+    icon_finger: 0xe62b,
+    icon_mark: 0xe62c,
+    icon_efficacy: 0xe62d
 };
 let IconFont = createIconSet(glyphMap, 'iconfont', 'iconfont.ttf');
 export default IconFont;

@@ -5,11 +5,11 @@
  */
 
 import React, { Component } from 'react';
-import { MyApp } from "./src/Rounts";
+import { MyApp } from './src/Rounts';
 export default class App extends Component<{}> {
-  render() {
-    return (
-    	<MyApp/>
-    )
-  }
+    render() {
+        return (
+            <MyApp/>
+        );
+    }
 }
