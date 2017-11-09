@@ -50,5 +50,6 @@ module.exports = {
         "react/prop-types": [0, "always"],
         "react/no-string-refs": [0, "always"],
         "no-unused-vars": [0, {"vars": "all", "args": "after-used"}],
+        "camelcase": 0,//强制驼峰法命名
     }
 };
