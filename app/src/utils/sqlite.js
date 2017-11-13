@@ -6,6 +6,7 @@
 
 import React, { Component } from 'react';
 
+import SQLiteForm from './SQLiteForm';
 import SQLiteStore from 'react-native-sqlite-storage';
 SQLiteStore.DEBUG(true);
 SQLiteStore.enablePromise(true);
@@ -28,6 +29,10 @@ export default class SQLite extends Component<{}> {
         } else {
             console.log('SQLiteStorage not open');
         }
+    }
+
+    _getSQLiteForm() {
+        return SQLiteForm;
     }
 
     // 报错
@@ -105,12 +110,19 @@ export default class SQLite extends Component<{}> {
      * @param param
      * @returns {Promise}
      */
-    addData(tableName, sql, param) {
+    addData(tableName, param) {
         return new Promise((resolve, reject) => {
+            let paramValue = Object.values(param);
+            let paramKeys = Object.keys(param);
+            let str = '';
+            for (let i = 0; i < paramKeys.length - 1; i++) {
+                str += '?,';
+            }
+
             if (db) {
                 db.executeSql(
-                    'INSERT INTO ' + tableName + sql,
-                    param,
+                    'INSERT INTO ' + tableName + ' (' + paramKeys + ') VALUES(' + str + '?)',
+                    paramValue,
                     () => {
                         this._successCB('addData');
                         resolve();

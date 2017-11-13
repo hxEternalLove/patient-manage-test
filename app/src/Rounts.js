@@ -7,7 +7,7 @@ import PersonalScreen from './views/tabPersonal/TabPersonal.template';
 import IconFont from './resources/fonts/IconFont';
 
 import NotificationHandled from './views/tabNotifications/NotificationHandled.template';
-import PatientInfos from './views/rounts/PatientInfoRounts';
+import PatientInfos from './views/patientInfoRounts/PatientInfoRounts';
 import BackButton from './widgets/BackButton';
 
 const NotifcationNav = StackNavigator({
@@ -35,7 +35,9 @@ const NotifcationNav = StackNavigator({
     navigationOptions: ({navigation}) => ({
         headerTitleStyle: {
             color: 'white',
-            fontSize: 20
+            fontSize: 20,
+            //居中显示
+            alignSelf: 'center'
         },
         headerStyle: {
             backgroundColor: '#3db1b2'
@@ -46,14 +48,23 @@ const PatientManageNav = StackNavigator({
     PatHome: {
         screen: PatientManageScreen,
         navigationOptions: ({navigation}) => ({
-            headerTitle: '🌺🌺'
+            // headerTitle: '🌺🌺'
+        })
+    },
+    PatientDetail: {
+        screen: PatientInfos,
+        navigationOptions: ({navigation}) => ({
+            tabBarVisible: false,
+            headerLeft: <BackButton handler={navigation}/>
         })
     }
 }, {
     navigationOptions: ({navigation}) => ({
         headerTitleStyle: {
             color: 'white',
-            fontSize: 20
+            fontSize: 20,
+            //居中显示
+            alignSelf: 'center'
         },
         headerStyle: {
             backgroundColor: '#3db1b2'
@@ -71,10 +82,13 @@ const PersonalNav = StackNavigator({
     navigationOptions: ({navigation}) => ({
         headerTitleStyle: {
             color: 'white',
-            fontSize: 20
+            fontSize: 20,
+            //居中显示
+            alignSelf: 'center'
         },
         headerStyle: {
-            backgroundColor: '#3db1b2'
+            backgroundColor: '#3db1b2',
+            justifyContent: 'center'
         }
     })
 });

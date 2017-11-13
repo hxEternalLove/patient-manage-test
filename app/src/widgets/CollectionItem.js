@@ -15,13 +15,14 @@ import {
 } from 'react-native';
 import IconFont from '../resources/fonts/IconFont';
 import Theme from '../Theme';
+import { Triangle } from '../widgets';
 
 function _renderCorner (props) {
     if (props.showCorner) {
         let saxWidth = props.width / 4;
         return (<View style={{flex: 1, position: 'absolute', bottom: 0, right: 0}}>
-            <View style={{width: saxWidth, height: saxWidth, borderWidth: saxWidth, borderColor: '#f2f2f2', borderLeftColor: 'rgba(0,0,0,0)', borderTopColor: 'rgba(0,0,0,0)', position: 'absolute', bottom: 0, right: 0}}/>
-            <Text style={{backgroundColor: '#f2f2f2', color: 'red', position: 'absolute', bottom: saxWidth / 3, right: saxWidth / 3, fontSize: 18}}>{props.num ? props.num : 0}</Text>
+            <Triangle direction={'right-bottom'} size={saxWidth} color='#f2f2f2' style={{position: 'absolute', bottom: 0, right: 0}}/>
+            <Text style={{backgroundColor: 'rgba(0,0,0,0)', color: 'red', position: 'absolute', bottom: saxWidth / 4, right: saxWidth / 4, fontSize: 18}}>{props.num ? props.num : 0}</Text>
         </View>);
     }
 }

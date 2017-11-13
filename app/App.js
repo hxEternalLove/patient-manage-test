@@ -12,14 +12,14 @@ let sqlite = new SQLite();
 
 export default class App extends Component<{}> {
     componentDidMount () {
-        sqlite.createTable('DepartmentList',
-            'depId INTEGER PRIMARY KEY NOT NULL,' +
-            'depNum INTEGER,' +
+        sqlite.createTable(sqlite._getSQLiteForm().depForm,
+            'depId VARCHAR PRIMARY KEY NOT NULL,' +
+            'depNum VARCHAR,' +
             'hospital VARCHAR,' +
-            'depName BLOB,' +
+            'depName VARCHAR,' +
             'option BLOB,' +
             'vipServiceOption BLOB,' +
-            'gitOptions VARCHAR,' +
+            'gitOptions BLOB,' +
             'patientCount INTEGER,' +
             'doctorCount INTEGER', []);
     }
