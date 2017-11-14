@@ -169,14 +169,14 @@ export default class NotificationTemplate extends Component<{}> {
     render() {
         return (
             <View style={styles.container}>
-                <GapLine lineWidth={20} lineColor={'#f7f7f7'}/>
+                <GapLine lineWidth={15} lineColor={'#f7f7f7'}/>
                 <TouchableOpacity>
-                    <View style={{height: 60, flexDirection: 'row', alignItems: 'center', borderColor: '#ddd', borderWidth: 1}}>
-                        <IconFont name={'icon_search'} style={{fontSize: 23, marginLeft: 10, color: '#888'}}/>
-                        <Text style={{fontSize: 23, color: '#888', marginLeft: 5}}>分类查看</Text>
+                    <View style={{height: 50, flexDirection: 'row', alignItems: 'center', borderColor: '#ddd', borderWidth: 1}}>
+                        <IconFont name={'icon_search'} style={{fontSize: 18, marginLeft: 5, color: '#888'}}/>
+                        <Text style={{fontSize: 18, color: '#888', marginLeft: 5}}>分类查看</Text>
                     </View>
                 </TouchableOpacity>
-                <GapLine lineWidth={20} lineColor={'#f7f7f7'}/>
+                <GapLine lineWidth={15} lineColor={'#f7f7f7'}/>
 
                 <FlatList data={this.state.depPatientList}
                     renderItem={(info) => _renderItem(info, this.props.navigation)}

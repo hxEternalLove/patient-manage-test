@@ -35,14 +35,14 @@ export default class RowItem extends Component<{}> {
                     <View style={styles.rowStyle}>
                         <Text style={{
                             color: this.props.titleColor ? this.props.titleColor : '#888',
-                            fontSize: 22
+                            fontSize: 18
                         }}>{this.props.title}</Text>
                         <View style={{flexDirection: 'row', alignItems: 'center'}}>
                             {
                                 this.props.imgArr
                                     ? _renderImgArr(this.props.imgArr) : <View/>
                             }
-                            <Text style={{fontSize: 22}}>{this.props.text}</Text>
+                            <Text style={{fontSize: 18, color: '#333'}}>{this.props.text}</Text>
                             <IconFont name='icon_right_arrow' style={{color: '#888', fontSize: 18, marginLeft: 5}}/>
                         </View>
                     </View>

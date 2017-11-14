@@ -21,8 +21,9 @@ const Style = {
     },
 
     leftView: {
-        width: 80,
-        height: 80,
+        width: 50,
+        height: 50,
+        borderRadius: 25,
         justifyContent: 'center',
         alignItems: 'center',
         marginVertical: 10,
@@ -113,21 +114,21 @@ function _renderItem(info, handler) {
             <View style={Style.leftView}>
                 {
                     info.item.avatar ? <Image source={{uri: info.item.avatar.src}} style={{
-                        width: 70,
-                        height: 70,
-                        borderRadius: 35}}/> : <Image
+                        width: 50,
+                        height: 50,
+                        borderRadius: 25}}/> : <Image
                         source={info.item.gender === 'female' ? require('../resources/common/images/avatar_patient_female.jpg') : require('../resources/common/images/avatar_patient_male.jpg')}
                         style={{
-                            width: 70,
-                            height: 70,
-                            borderRadius: 35}}/>
+                            width: 50,
+                            height: 50,
+                            borderRadius: 25}}/>
                 }
             </View>
 
             <View style={Style.rightInfo}>
                 <View style={Style.topView}>
                     <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
-                        <Text style={{fontSize: 20}}>{info.item.name}</Text>
+                        <Text style={{fontSize: 17, color: '#333'}}>{info.item.name}</Text>
                         {
                             info.item.gender === 'male'
                                 ? <View style={[Style.nameAgeStyle, {borderColor: '#3db1b2'}]}>
@@ -141,7 +142,7 @@ function _renderItem(info, handler) {
                         }
                     </View>
 
-                    <Text style={{color: '#666', fontSize: 15}}>{moment(info.item.relateInfo.createTime).format('YYYY-MM-DD')}</Text>
+                    <Text style={{color: '#666', fontSize: 12}}>{moment(info.item.relateInfo.createTime).format('YYYY-MM-DD')}</Text>
                 </View>
 
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 3, marginTop: 10, alignItems: 'center'}}>

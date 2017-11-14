@@ -46,7 +46,7 @@ export default class NotificationTemplate extends Component<{}> {
                     renderItem={(info) => _renderItem(info, this.props.navigation)}
                     ListHeaderComponent={() => <View style={styles.headLineStyle}/>}
                     ItemSeparatorComponent={() => <View
-                        style={{flex: 1, height: 1, marginLeft: 100, backgroundColor: '#ddd'}}/>}
+                        style={{flex: 1, height: 1, marginLeft: 90, backgroundColor: '#ddd'}}/>}
                     ListFooterComponent={() => <View style={{
                         flex: 1,
                         height: 50,
@@ -55,7 +55,7 @@ export default class NotificationTemplate extends Component<{}> {
                         borderColor: '#888',
                         borderTopWidth: 1
                     }}><Text
-                            style={{color: '#666', fontSize: 20, position: 'absolute', bottom: 10}}>左滑名字标记为已处理</Text></View>}
+                            style={{color: '#666', fontSize: 16, position: 'absolute', bottom: 10}}>左滑名字标记为已处理</Text></View>}
                     keyExtractor={(item, index) => item.taskId + '_KEY_' + index}/>
             </View>
         );

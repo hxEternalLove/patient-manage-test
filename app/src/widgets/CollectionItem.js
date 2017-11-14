@@ -31,10 +31,10 @@ export default class CollectionItem extends Component<{}> {
     render() {
         return (
             <TouchableOpacity activeOpacity={0.5} onPress={this.props.onPress}>
-                <View style={[styles.wrapView, {width: this.props.width, height: this.props.width * 3 / 2}, this.props.style]}>
+                <View style={[styles.wrapView, {width: this.props.width, height: this.props.width * 4 / 3}, this.props.style]}>
                     <View style={{alignItems: 'center'}}>
-                        <IconFont name={this.props.icon ? this.props.icon : 'icon_sport'} style={{color: Theme.defaultColor, fontSize: 45, marginLeft: 5, marginBottom: 10}}/>
-                        <Text style={{fontSize: 20, fontWeight: 'bold'}}>{this.props.title}</Text>
+                        <IconFont name={this.props.icon ? this.props.icon : 'icon_sport'} style={{color: Theme.defaultColor, fontSize: this.props.width / 2 / 1.4, marginLeft: 5, marginBottom: 10}}/>
+                        <Text style={{fontSize: 14, fontWeight: 'bold', color: '#333'}}>{this.props.title}</Text>
                     </View>
                     {_renderCorner(this.props)}
                 </View>

@@ -34,7 +34,7 @@ function _renderCaseItem(info) {
             <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap', marginVertical: 5}}>
                 {CaseImgs}
             </View>
-            <Text style={{fontSize: 20}}>{info.item.caseDesc}</Text>
+            <Text style={{fontSize: 16, color: '#333'}}>{info.item.caseDesc}</Text>
         </View>
     </TouchableOpacity>);
 }
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#ffffff'
     },
     welcome: {
-        fontSize: 20,
+        fontSize: 16,
         textAlign: 'center',
         margin: 10
     },

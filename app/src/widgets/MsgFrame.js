@@ -20,13 +20,13 @@ const Style = {
     },
 
     leftView: {
-        width: 80,
-        height: 80,
+        width: 60,
+        height: 60,
         justifyContent: 'center',
         alignItems: 'center',
         borderColor: '#3db1b2',
         borderWidth: 2,
-        borderRadius: 40,
+        borderRadius: 30,
         marginVertical: 10,
         marginHorizontal: 15
     },
@@ -86,14 +86,14 @@ function _renderItem(info, handler) {
     }}>
         <View style={Style.container}>
             <View style={Style.leftView}>
-                <Text style={{color: '#3db1b2', fontSize: 25}}>{_getTypeText(info)}</Text>
+                <Text style={{color: '#3db1b2', fontSize: 18}}>{_getTypeText(info)}</Text>
                 {info.index % 2 === 0 ? <View style={Style.redDot}/> : <View/>}
             </View>
 
             <View style={Style.rightInfo}>
                 <View style={Style.topView}>
                     <View style={{flex: 1, flexDirection: 'row', flexWrap: 'wrap'}}>
-                        <Text style={{fontSize: 20}}>{info.item.target.userInfo.name}</Text>
+                        <Text style={{fontSize: 17, color: '#333'}}>{info.item.target.userInfo.name}</Text>
                         {
                             info.item.target.userInfo.gender === 'male'
                                 ? <View style={[Style.nameAgeStyle, {borderColor: '#3db1b2'}]}>
@@ -107,7 +107,7 @@ function _renderItem(info, handler) {
                         }
                     </View>
 
-                    <Text style={{color: '#666', fontSize: 15}}>2017-10-19</Text>
+                    <Text style={{color: '#666', fontSize: 12}}>2017-10-19</Text>
                 </View>
 
                 <View style={{flexDirection: 'row', justifyContent: 'space-between', marginVertical: 3}}>
@@ -116,7 +116,7 @@ function _renderItem(info, handler) {
                         ? <Text style={{color: '#666'}}>{info.item.dealerUserName} 已处理</Text> : <Text/>}
                 </View>
 
-                <Text style={{color: '#666', fontSize: 15}}>{info.item.target.taskDesc}</Text>
+                <Text style={{color: '#666', fontSize: 14}}>{info.item.target.taskDesc}</Text>
             </View>
 
         </View></TouchableOpacity>);

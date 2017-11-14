@@ -8,19 +8,19 @@ const PatientInfos = TabNavigator({
     DataCaseInfo: {
         screen: PatientCaseInfo,
         navigationOptions: ({navigation}) => ({
-            tabBarLabel: '    资料与病历'
+            tabBarLabel: '     资料与病历'
         })
     },
     PlansManage: {
         screen: PatientPlans,
         navigationOptions: ({navigation}) => ({
-            tabBarLabel: '|   管理方案'
+            tabBarLabel: '|    管理方案'
         })
     },
     InformationData: {
         screen: PatientInformation,
         navigationOptions: ({navigation}) => ({
-            tabBarLabel: '|   信息与数据'
+            tabBarLabel: '|    信息与数据'
         })
     }
 }, {
@@ -40,7 +40,7 @@ const PatientInfos = TabNavigator({
             borderColor: '#aaa'
         },
         labelStyle: {// label的样式安卓属性
-            fontSize: 18 // 文字大小
+            fontSize: 16 // 文字大小
         }
     },
     navigationOptions: {
