@@ -10,6 +10,17 @@ import NotificationHandled from './views/tabNotifications/NotificationHandled.te
 import PatientInfos from './views/patientInfoRounts/PatientInfoRounts';
 import BackButton from './widgets/BackButton';
 
+import MouldTypeScreen from './views/tabPersonal/DepartmentPlans.template';
+import PlansListScreen from './views/tabPersonal/HospitalSchemaPackage.template';
+import DepListScreen from './views/tabPersonal/DepartmentList.template';
+import PatientConventionScreen from './views/tabPersonal/PatientConvention.template';
+import TheMessageScreen from './views/tabPersonal/TheMessage.template';
+import MyNewDepartmentScreen from './views/tabPersonal/MyNewDepartment.template';
+import VisitTimeSettingScreen from './views/tabPersonal/VisitTimeSetting.template';
+import MassMessageScreen from './views/tabPersonal/MassMessage.template';
+import MyCenterScreen from './views/tabPersonal/MyCenter.template';
+import DepartmentQrCodeScreen from './views/tabPersonal/DepartmentQrCode.template';
+
 const NotifcationNav = StackNavigator({
     NotiHome: {
         screen: NotificationScreen,
@@ -77,7 +88,38 @@ const PersonalNav = StackNavigator({
         navigationOptions: ({navigation}) => ({
             headerTitle: '工作站'
         })
+    },
+    DepList: {
+        screen: DepListScreen
+    },
+    departmentPlans: {
+        screen: MouldTypeScreen
+    },
+    hospitalSchemaPackage: {
+        screen: PlansListScreen
+    },
+    patientConvention: {
+        screen: PatientConventionScreen
+    },
+    theMessage: {
+        screen: TheMessageScreen
+    },
+    myNewDepartment: {
+        screen: MyNewDepartmentScreen
+    },
+    visitTimeSettings: {
+        screen: VisitTimeSettingScreen
+    },
+    massMessages: {
+        screen: MassMessageScreen
+    },
+    myCenter: {
+        screen: MyCenterScreen
+    },
+    departmentQrCode: {
+        screen: DepartmentQrCodeScreen
     }
+
 }, {
     navigationOptions: ({navigation}) => ({
         headerTitleStyle: {
@@ -99,7 +141,7 @@ const MyApp = TabNavigator({
             tabBarLabel: '医医',
             title: '医医',
             tabBarIcon: ({focused, tintColor}) => (//eslint-disable-line
-                <IconFont name={'icon_home'} style={{fontSize: 28, color: tintColor}}/>)
+                <IconFont name={'icon_home'} style={{fontSize: 22, color: tintColor}}/>)
         })
     },
     PatientManage: {
@@ -107,7 +149,7 @@ const MyApp = TabNavigator({
         navigationOptions: ({navigation}) => ({
             tabBarLabel: '患者管理',
             tabBarIcon: ({focused, tintColor}) => (//eslint-disable-line
-                <IconFont name={'icon_patient_manage'} style={{fontSize: 28, color: tintColor}}/>)
+                <IconFont name={'icon_patient_manage'} style={{fontSize: 22, color: tintColor}}/>)
         })
     },
     Personal: {
@@ -116,7 +158,7 @@ const MyApp = TabNavigator({
             tabBarLabel: '工作站',
             title: '工作站',
             tabBarIcon: ({focused, tintColor}) => (//eslint-disable-line
-                <IconFont name={'icon_workspace'} style={{fontSize: 28, color: tintColor}}/>)
+                <IconFont name={'icon_workspace'} style={{fontSize: 22, color: tintColor}}/>)
         })
     }
 }, {
@@ -130,7 +172,7 @@ const MyApp = TabNavigator({
         inactiveTintColor: '#979797', // label和icon的前景色 不活跃状态下
         style: {height: 54, backgroundColor: '#fafafa', borderColor: '#888', borderTopWidth: 1, marginBottom: 5},
         labelStyle: {// label的样式安卓属性
-            fontSize: 18 // 文字大小
+            fontSize: 14 // 文字大小
         }
     }
 

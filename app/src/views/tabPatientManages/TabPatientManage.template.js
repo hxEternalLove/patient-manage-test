@@ -13,7 +13,7 @@ import {
     TouchableOpacity
 } from 'react-native';
 import * as API from '../../resources/api';
-import {MsgFrame, GapLine, Triangle, PatientFrame} from '../../widgets';
+import {MsgFrame, GapLine, Triangle, PatientFrame, HeaderView} from '../../widgets';
 import IconFont from '../../resources/fonts/IconFont';
 import Theme from '../../Theme';
 import SQLite from '../../utils/sqlite';
@@ -39,35 +39,6 @@ function _renderDepartView (info, navigation, user) {
     </TouchableOpacity>);
 }
 
-class HeaderView extends Component<{}> {
-    // 构造
-    constructor(props) {
-        super(props);
-        // 初始状态
-        this.state = {
-            headTitle: this.props.headTitle
-        };
-    }
-
-    componentWillReceiveProps(nextProps, state) {
-        if (this.props !== nextProps) {
-            this.setState({
-                headTitle: nextProps.headTitle
-            });
-        }
-    }
-
-    render() {
-        return (<TouchableOpacity style={{alignSelf: 'center'}} onPress={() => {
-            this.props.onPress();
-        }}>
-            <View style={[{flexDirection: 'row', alignItems: 'center', justifyContent: 'center'}, this.props.style]}>
-                <Text style={{color: 'white', fontSize: 20, marginRight: 10}}>{this.state.headTitle}</Text>
-                <Triangle direction={'bottom'} color={'white'} size={6}/>
-            </View>
-        </TouchableOpacity>);
-    }
-}
 // noinspection JSAnnotator
 export default class NotificationTemplate extends Component<{}> {
     static navigationOptions = ({navigation}) => {
