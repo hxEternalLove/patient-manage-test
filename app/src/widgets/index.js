@@ -6,6 +6,8 @@ import GapLine from './GapLine';
 import CollectionItem from './CollectionItem';
 import Triangle from './Triangle';
 import PatientFrame from './PatientFrame';
+import HeaderView from './HeaderView';
+import DepartmentList from './DepartmentList';
 
 export {
     BackButton,
@@ -15,5 +17,7 @@ export {
     GapLine,
     CollectionItem,
     Triangle,
-    PatientFrame
+    PatientFrame,
+    HeaderView,
+    DepartmentList
 };

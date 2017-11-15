@@ -10,29 +10,23 @@ import {
     View,
     FlatList
 } from 'react-native';
-import * as API from '../../resources/api';
-import MsgFrame from '../../widgets/MsgFrame';
-import BackButton from '../../widgets/BackButton';
+import { RowItem } from './index';
 
-function _renderItem(info) {
-    return (<MsgFrame info={info}/>);
+function _renderItem(info, navigation, realRoute) {
+    return (<RowItem title={info.item.depName} titleColor='#333' onPress={() => {
+        navigation.navigate(realRoute, {title: info.item.depName});
+    }}/>);
 }
 
 // noinspection JSAnnotator
-export default class NotificationHandledTemplate extends Component<{}> {
-    static navigationOptions = ({navigation}) => {
-        return {
-            headerLeft: <BackButton handler={navigation}/>,
-            tabBarVisible: false
-        };
-    }
-
+export default class DepartmentList extends Component<{}> {
     // 构造
     constructor(props) {
         super(props);
         // 初始状态
         this.state = {
-            notifyData: API.HandledData
+            notifyData: this.props.notifyData,
+            realRoute: this.props.realRoute
         };
     }
 
@@ -40,10 +34,8 @@ export default class NotificationHandledTemplate extends Component<{}> {
         return (
             <View style={styles.container}>
                 <FlatList data={this.state.notifyData}
-                    renderItem={(info) => _renderItem(info, this.props.navigation)}
+                    renderItem={(info) => _renderItem(info, this.props.navigation, this.state.realRoute)}
                     ListHeaderComponent={() => <View style={styles.headLineStyle}/>}
-                    ItemSeparatorComponent={() => <View
-                        style={{flex: 1, height: 1, marginLeft: 100, backgroundColor: '#ddd'}}/>}
                     keyExtractor={(item, index) => item.taskId + '_KEY_' + index}/>
             </View>
         );
@@ -53,8 +45,6 @@ export default class NotificationHandledTemplate extends Component<{}> {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
         backgroundColor: 'white'
     },
 
