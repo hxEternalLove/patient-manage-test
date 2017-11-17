@@ -8,6 +8,7 @@ const Theme = {
     minGap: 5,
     maxGap: 10,
     lineGap: 1,
+    leftGap: 15,
     defaultGap: 14,
     defaultSmallGap: 10,
     icon: {
@@ -15,6 +16,9 @@ const Theme = {
         height: 26
     },
     defaultColor: '#3db1b2',
-    defaultBgColor: '#F8F8F8'
+    defaultBgColor: '#F8F8F8',
+    textColor: '#666',
+    titleColor: '#333',
+    lineColor: '#ddd'
 };
 export default Theme;

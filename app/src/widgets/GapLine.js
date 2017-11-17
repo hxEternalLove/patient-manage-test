@@ -10,6 +10,6 @@ export default class GapLine extends Component<{}> {
     render () {
         let lineWidth = this.props.lineWidth ? this.props.lineWidth : 1;
         return (<View
-            style={[{height: this.props.vertical ? null : lineWidth, width: this.props.vertical ? lineWidth : null, backgroundColor: this.props.lineColor ? this.props.lineColor : '#ddd'}, this.props.style]}/>);
+            style={[{height: this.props.vertical ? null : lineWidth, width: this.props.vertical ? lineWidth : null, backgroundColor: this.props.lineColor ? this.props.lineColor : '#ddd'}, this.props.style]}>{this.props.children}</View>);
     }
 };

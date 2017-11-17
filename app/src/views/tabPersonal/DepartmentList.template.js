@@ -15,7 +15,7 @@ import * as API from '../../resources/api';
 
 function _renderItem(info, navigation) {
     return (<RowItem title={info.item.depName} titleColor='#333' onPress={() => {
-        navigation.navigate(navigation.state.params.realRoute, {title: info.item.depName});
+        navigation.navigate(navigation.state.params.realRoute, {title: info.item.depName, hospital: info.item.hospital, depId: info.item.depId});
     }}/>);
 }
 
@@ -23,7 +23,8 @@ function _renderItem(info, navigation) {
 export default class DepartmentList extends Component<{}> {
     static navigationOptions = ({navigation}) => ({
         headerLeft: <BackButton handler={navigation}/>,
-        tabBarVisible: false
+        tabBarVisible: false,
+        headerTitle: '选择科室'
     });
     // 构造
     constructor(props) {

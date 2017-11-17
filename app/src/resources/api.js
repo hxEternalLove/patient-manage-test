@@ -4230,6 +4230,11 @@ export const UserPatientList6 = [
     }
 ];
 
+// 科室二维码
+export const QrCodeUrls = [
+    {depId: '22bpdmj2tcr4jfda497jmq55heDEP', url: 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQFx8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyWlF1bms2N3dkNzAxMDAwMHcwN3AAAgTaApxZAwQAAAAA'}, {depId: '22bpjlehpqrtf2jqo85aaqg7pvDEP', url: 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQEe8jwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyRXdaWGtWN3dkNzAxMDAwMDAwNzIAAgSuBpxZAwQAAAAA'}, {depId: '22e1f3nldajsj3upj3bcdg3d5tDEP', url: 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQE08TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyUFQ5M2twN3dkNzAxMDAwMHcwN24AAgQaPKVZAwQAAAAA'}, {depId: '22e1f5bumi4s3fi9n2rl3fdqd0DEP', url: 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQGp8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyWURnRWs1N3dkNzAxMDAwMDAwN0MAAgRRBKVZAwQAAAAA'}, {depId: '22f3ds08dgni02nbe87esvfas2DEP', url: 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQFM8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAyWjd4VWw0N3dkNzAxMDAwMGcwN3MAAgTgPL9ZAwQAAAAA'}, {depId: '22lhorcihr966fdp78m6of986eDEP', url: 'https://mp.weixin.qq.com/cgi-bin/showqrcode?ticket=gQGM8TwAAAAAAAAAAS5odHRwOi8vd2VpeGluLnFxLmNvbS9xLzAySldvY2tWN3dkNzAxMDAwME0wN1QAAgSFVsNZAwQAAAAA'}
+];
+
 export const Config = {};
 Config.PLAN_TYPES = [
     {

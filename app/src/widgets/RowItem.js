@@ -14,6 +14,7 @@ import {
     Dimensions
 } from 'react-native';
 import IconFont from '../resources/fonts/IconFont';
+import Theme from '../Theme';
 
 const {width} = Dimensions.get('window');
 
@@ -33,10 +34,16 @@ export default class RowItem extends Component<{}> {
             <View style={[styles.container, this.props.style]}>
                 <TouchableOpacity onPress={this.props.onPress}>
                     <View style={styles.rowStyle}>
-                        <Text style={{
-                            color: this.props.titleColor ? this.props.titleColor : '#888',
-                            fontSize: 20
-                        }}>{this.props.title}</Text>
+                        <View style={{flex: 1, flexDirection: 'row'}}>
+                            <Text style={{
+                                color: this.props.titleColor ? this.props.titleColor : '#888',
+                                fontSize: 20
+                            }}>{this.props.title}</Text>
+                            {
+                                this.props.subTitle
+                                    ? <Text style={{color: Theme.textColor, marginLeft: 10}}>|  {this.props.subTitle}</Text> : null
+                            }
+                        </View>
                         <View style={{flexDirection: 'row', alignItems: 'center'}}>
                             {
                                 this.props.imgArr
@@ -46,7 +53,7 @@ export default class RowItem extends Component<{}> {
                             <IconFont name='icon_right_arrow' style={{color: '#888', fontSize: 18, marginLeft: 5}}/>
                         </View>
                     </View>
-                    <View style={{height: 1, width: width, backgroundColor: '#ddd', marginLeft: 15}}/>
+                    <View style={{height: 1, width: width, backgroundColor: '#ddd', marginLeft: this.props.gapLeft ? this.props.gapLeft : 15}}/>
                 </TouchableOpacity>
             </View>
         );

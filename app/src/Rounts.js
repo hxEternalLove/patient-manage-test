@@ -21,6 +21,8 @@ import MassMessageScreen from './views/tabPersonal/MassMessage.template';
 import MyCenterScreen from './views/tabPersonal/MyCenter.template';
 import DepartmentQrCodeScreen from './views/tabPersonal/DepartmentQrCode.template';
 
+import CreatDepartmentScreen from './views/tabPersonal/CreateDepartment.template';
+
 const NotifcationNav = StackNavigator({
     NotiHome: {
         screen: NotificationScreen,
@@ -118,6 +120,9 @@ const PersonalNav = StackNavigator({
     },
     departmentQrCode: {
         screen: DepartmentQrCodeScreen
+    },
+    creatDepartment: {
+        screen: CreatDepartmentScreen
     }
 
 }, {
