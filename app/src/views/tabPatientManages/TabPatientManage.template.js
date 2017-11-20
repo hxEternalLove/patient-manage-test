@@ -23,15 +23,42 @@ function _renderItem(info, navigation) {
     return <PatientFrame info={info} handler={navigation}/>;
 }
 
+async function getPatientByDepId (user, depId) {
+    let patientList = [];
+    await sqlite.findByRequire(sqlite._getSQLiteForm().depPatientForm, 'depId=?', [depId])
+        .then((result) => {
+            patientList = result;
+        }).catch((reject) => {
+            patientList = user._getDepPatientList(depId);
+            patientList.map(async (item) => {
+                await sqlite.addData(sqlite._getSQLiteForm().depPatientForm, item)
+                    .then((result) => {
+                        // console.log('🐯🐯🐯333');
+                    }).catch((err) => {
+                        // console.log('🐯🐯🐯444', err);
+                    });
+            });
+        });
+    // console.log('@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@', depId);
+    return patientList;
+}
+
 function _renderDepartView (info, navigation, user) {
-    return (<TouchableOpacity onPress={() => {
+    if (!info) {
+        return <View/>;
+    }
+
+    return (<TouchableOpacity onPress={async () => {
         navigation.setParams({
             changTitle: info.item.depName
         });
         navigation.state.params.showDepartView();
+
         user.setState({
-            depPatientList: user._getDepPatientList(info.item.depId)
+            depPatientList: await getPatientByDepId(user, info.item.depId)
         });
+
+        // console.log('@@@@@@@@@@@@@@@@@@@@@ user.state @@@@@@@@@@@@@@@@@@@@@@@@@@@', user.state.depPatientList);
     }}>
         <View style={{marginTop: 5, alignItems: 'center', justifyContent: 'center'}} key={info.item.depNum + info.index}>
             <Text style={{color: 'white', fontSize: 20, marginVertical: 10}}>{info.item.depName}</Text>
@@ -66,9 +93,9 @@ export default class NotificationTemplate extends Component<{}> {
         super(props);
         // 初始状态
         this.state = {
-            notifyData: API.IMData,
+            notifyData: [], //API.IMData,
             showDepartment: false,
-            depList: API.UserDepartmentList,
+            depList: [], //API.UserDepartmentList,
             depPatientList: []
         };
         // console.log('🐯🐯🐯222', this.state.depList);
@@ -106,29 +133,53 @@ export default class NotificationTemplate extends Component<{}> {
 
     async componentDidMount () {
         await this._loadData();
-        this.setState({
-            depPatientList: this._getDepPatientList(this.state.depList[0].depId)
-        });
-        // console.log('🐯🐯🐯222', this.state.depList);
+
+        // console.log('🐯🐯🐯222', this.state.depList[0]);
+
+        if (this.state.depList !== null) {
+            // 有数据 去获取数据
+            await sqlite.findByRequire(sqlite._getSQLiteForm().depPatientForm, 'depId=?', [this.state.depList[0].depId])
+                .then((result) => {
+                    this.setState({
+                        depPatientList: result
+                    });
+                    // console.log('@@ 查找 depId @@', result);
+                }).catch(() => {
+                    let patientList = this._getDepPatientList(this.state.depList[0].depId);
+                    this.setState({
+                        depPatientList: patientList
+                    });
+                    patientList.map(async (item) => {
+                        await sqlite.addData(sqlite._getSQLiteForm().depPatientForm, item)
+                            .then((result) => {
+                                // console.log('🐯🐯🐯333');
+                            }).catch((err) => {
+                                // console.log('🐯🐯🐯444', err);
+                            });
+                    });
+                });
+        } else {
+            // 没有数据制造数据
+            let patientList = this._getDepPatientList(this.state.depList[0].depId);
+            this.setState({
+                depPatientList: patientList
+            });
+            patientList.map(async (item) => {
+                await sqlite.addData(sqlite._getSQLiteForm().depPatientForm, item)
+                    .then((result) => {
+                        // console.log('🐯🐯🐯333');
+                    }).catch((err) => {
+                        // console.log('🐯🐯🐯444', err);
+                    });
+            });
+        }
         // 给 navigation 注册 方法属性
         this.props.navigation.setParams({
-            changTitle: this.state.depList[0].depName ? this.state.depList[0].depName : '',
+            changTitle: this.state.depList[0] ? this.state.depList[0].depName : '',
             showDepartView: () => {
                 this._showDepartment();
             }
         });
-
-        sqlite.createTable(sqlite._getSQLiteForm().depPatientForm,
-            'userId VARCHAR NOT NULL,' +
-            'depId VARCHAR NOT NULL,' +
-            'name VARCHAR,' +
-            'mobile VARCHAR,' +
-            'identityCode VARCHAR,' +
-            'gender VAECHAR,' +
-            'birthDate VARCHAR,' +
-            'avatar BLOB,' +
-            'relateInfo BLOB,' +
-            'CONSTRAINT pk_DepPatientId PRIMARY KEY (userId,depId)', []);
     }
 
     _showDepartment() {
@@ -138,10 +189,11 @@ export default class NotificationTemplate extends Component<{}> {
     }
 
     render() {
+        console.log('@@@@@@@@@@@@@@@@@@@@@@  render  @@@@@@@@@@@@@@@@@@@@@@@@@@');
         return (
             <View style={styles.container}>
                 <GapLine lineWidth={15} lineColor={'#f7f7f7'}/>
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => {}}>
                     <View style={{height: 50, flexDirection: 'row', alignItems: 'center', borderColor: '#ddd', borderWidth: 1}}>
                         <IconFont name={'icon_search'} style={{fontSize: 18, marginLeft: 5, color: '#888'}}/>
                         <Text style={{fontSize: 18, color: '#888', marginLeft: 5}}>分类查看</Text>

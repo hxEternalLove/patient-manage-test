@@ -93,7 +93,7 @@ function getDeviceIcon (type) {
     return icon;
 }
 function _renderDevices (devices) {
-    if (devices.length <= 0) {
+    if (!devices) {
         return <View/>;
     } else {
         return devices.map((item, index) => {

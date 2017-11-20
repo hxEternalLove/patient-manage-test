@@ -112,14 +112,13 @@ export default class SQLite extends Component<{}> {
      */
     addData(tableName, param) {
         return new Promise((resolve, reject) => {
-            let paramValue = Object.values(param);
-            let paramKeys = Object.keys(param);
-            let str = '';
-            for (let i = 0; i < paramKeys.length - 1; i++) {
-                str += '?,';
-            }
-
             if (db) {
+                let paramValue = Object.values(param);
+                let paramKeys = Object.keys(param);
+                let str = '';
+                for (let i = 0; i < paramKeys.length - 1; i++) {
+                    str += '?,';
+                }
                 db.executeSql(
                     'INSERT INTO ' + tableName + ' (' + paramKeys + ') VALUES(' + str + '?)',
                     paramValue,
@@ -179,13 +178,19 @@ export default class SQLite extends Component<{}> {
      * @param param 参数字典
      * @returns {Promise}
      */
-    findByRequire(tableName, sql, param) {
+    findByRequire(tableName, sql, array) {
         return new Promise((resolve, reject) => {
             if (db) {
-                db.executeSql('SELECT * FROM ' + tableName + sql, param,
+                db.executeSql('SELECT * FROM ' + tableName + ' WHERE ' + sql, array,
                     (results) => {
                         if (results.rows.length > 0) {
-                            resolve(results.rows.item(0));
+                            var len = results.rows.length;
+                            var datas = [];
+                            for (let i = 0; i < len; i++) {
+                                datas.push(results.rows.item(i));
+                            }
+                            resolve(datas);
+                            // resolve(results.rows.item(0));
                         } else {
                             reject('not fid item');//eslint-disable-line
                         }
